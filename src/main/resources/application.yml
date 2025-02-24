@@ -33,7 +33,7 @@ logging:
 google:
   maps:
     api:
-      key: AIzaSyCRANsZ1_aF_P1uzooYMoDdolDrSS3kFO4
+      key: REPLACE_API_KEY_HERE
       base-url: https://maps.googleapis.com/maps/api/place
 
 # Pagination defaults
