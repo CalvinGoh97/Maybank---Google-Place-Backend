@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=TESTDB;encrypt=true;trustServerCertificate=true
+    username: placesuser
+    password: placesdb
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+        format_sql: true
+
+server:
+  port: 8080
+
+# Logging Configuration
+logging:
+  level:
+    root: INFO
+    com.example.places: DEBUG
+    org.springframework.web: INFO
+    org.hibernate: ERROR
+  file:
+    name: logs/application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+
+# Google Maps API Configuration
+google:
+  maps:
+    api:
+      key: AIzaSyCRANsZ1_aF_P1uzooYMoDdolDrSS3kFO4
+      base-url: https://maps.googleapis.com/maps/api/place
+
+# Pagination defaults
+app:
+  pagination:
+    default-page-size: 10
+    max-page-size: 100
